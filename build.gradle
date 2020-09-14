@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.8.1'
 }
 
 group 'org.example'
@@ -7,6 +8,19 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+allure {
+    autoconfigure = true
+    version = '2.13.5'
+
+    useJUnit5 {
+        version = '2.13.5'
+    }
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 test {
@@ -19,4 +33,5 @@ dependencies {
     compile("org.junit.jupiter:junit-jupiter-api:5.6.2")
     compile("org.junit.jupiter:junit-jupiter-engine:5.6.2")
     compile("org.junit.jupiter:junit-jupiter-params:5.6.2")
+    compile 'io.qameta.allure:allure-java-commons:2.13.3'
 }

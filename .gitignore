@@ -1,0 +1,6 @@
+/src/main/resources/app.properties
+/.allure/
+/.gradle/
+/.idea/
+/gradle/
+/build/

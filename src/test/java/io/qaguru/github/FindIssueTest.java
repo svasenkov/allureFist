@@ -14,10 +14,10 @@ import static io.qameta.allure.Allure.*;
 
 @Owner("pankovaov")
 @Feature("Работа с задачами")
-public class IssueTest {
+public class FindIssueTest {
 
     private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final String BASE_URL = "https://github.com1";
+    private static final String BASE_URL = "https://github.com";
     private static final int ISSUE = 68;
 
     @Test

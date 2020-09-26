@@ -17,14 +17,17 @@ public class WebCreateIssue {
     public void createNewIssue(){
         // инициализация данных
         String login = loadProperty(LOGIN);
-        String password = loadProperty(PASSWORD);
 
         steps.openLoginForm(LOGIN_URL);
-        steps.loginAs(login,password);
+        steps.loginAs(login);
         steps.findReposiroty(REPOSITORY);
         steps.openRepository(REPOSITORY);
         steps.openIssuePage();
-
-
+        steps.createNewIssue();
+        steps.addIssueInfo("Новая задача","Описание");
+        steps.selectAssignee("olenenok-ovi");
+        steps.selectLabel("bug");
+        steps.clickSubmit();
+        steps.checkIssue("Новая задача","bug","olenenok-ovi");
     }
 }
